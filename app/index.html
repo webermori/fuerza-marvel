@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/frz-styles.css" />
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<main class="main" data-custom-js="home">
+        <section>
+            <div id="app" class="container">
+                <header class="header">
+                    <h1 class="header-title">Hero Assembler</h1>
+                </header>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="search-hero">
+                            <input type="text" class="search-hero__input" placeholder="Search" />
+                            <span class="search-hero__button">Send</span>
+                        </div>
+                        <div class="results">
+                            <h2 class="results__title">Results</h2>
+                            <ul class="results__list grid">
+                               <!--  <li class="columns medium-12" v-for="person in persons"> -->
+                                <li class="grid-4" v-for="person in persons">
+                                    <div class="CardHero">
+                                        <img v-bind:src="person.thumbnail.path + '/standard_large.jpg'" v-bind:title=" person.name" class="CardHero-img">
+                                        <div class="CardHero-body">
+                                            <h3 class="CardHero-title">{{ person.name }}</h3>
+                                            <a href="#" class="CardHero-button">Add to Team</a>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="search-team" placeholder="Team name...">
+                       <section class="team">
+                           <h2 class="team__title">Choosen Member</h2>
+                           <ul class="team__list">
+                               <li class="team__list__item">
+                                   <a href="#" class="CardHz">
+                                       <img src="https://api.fnkr.net/testimg/60x60/690C0C/FFF/?text=avatar" class="CardHz-figure">
+                                        <h3 class="CardHz-title">Daredevil</h3>
+                                   </a>
+                               </li>
+                               <li class="team__list__item">
+                                   <a href="#" class="CardHz">
+                                       <img src="https://api.fnkr.net/testimg/60x60/690C0C/FFF/?text=avatar" class="CardHz-figure">
+                                        <h3 class="CardHz-title">Daredevil</h3>
+                                   </a>
+                               </li>
+                               <li class="team__list__item">
+                                   <a href="#" class="CardHz">
+                                       <img src="https://api.fnkr.net/testimg/60x60/690C0C/FFF/?text=avatar" class="CardHz-figure">
+                                        <h3 class="CardHz-title">Daredevil</h3>
+                                   </a>
+                               </li>
+
+                           </ul>
+                       </section>
+                    </div>
+                </div>
+            </div>  
+        </section> 
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="http://www.fuerzastudio.com.br/" class="footer-fuerza" target="blank">
+                <img src="../images/logo-fuerza.png" alt="Fuerza Studio" title="Fuerza Studio" />
+            </a>
+        </div>
+    </footer>
+    <script src="js/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+//Breakpoints
+// Small devices (landscape phones, 576px and up)
+@mixin min-sm {
+    @media only screen and (min-width: 576px) {
+        @content;
+    }
+}
+// Medium devices (tablets, 768px and up)
+@mixin min-md {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+// Large devices (desktops, 992px and up)
+@mixin min-lg {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+// Extra large devices (large desktops, 1200px and up)
+@mixin min-xl {
+    @media only screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin max-sm {
+    @media only screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin max-md {
+    @media only screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+//Images
+$image-path: '../images' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+@mixin background-image($name, $size: false) {
+    background-image: url(#{$image-path}/#{$name}.svg);
+    @if($size) {
+        background-size: $size;
+    }
+    .no-svg & {
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+
+//Fonts
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//Visually hide an element
+%visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+}
+
+@mixin center {
+    display: table!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    text-align: center!important;
+}
+
+@mixin center-max-sm {
+    @include max-md {
+        display: table!important;
+        margin-right: auto!important;
+        margin-left: auto!important;
+        text-align: center!important;
+    }
+}

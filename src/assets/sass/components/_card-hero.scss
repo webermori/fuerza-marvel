@@ -1,0 +1,44 @@
+.CardHero {
+	@extend .card;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 1px 3px $color-1-darker;
+    min-height: 274px;
+	@extend .hvr-bounce-in;
+	&-img {
+		width: 100%;
+		@extend .rounded-top;
+	}
+
+	&-body {
+		padding: 10px;
+		float: left;
+		width: 100%;
+		display: inline;
+	}
+
+	&-title {
+		height: 30px;
+		margin-bottom: 20px;
+		font-size: 24px;
+		color: #111;
+		@include min-lg {
+			font-size: 18px;
+			line-height: 1.2;
+		}
+	}
+
+	&-button {
+		@extend .btn; 
+		@extend .btn-outline-primary;
+		font-weight: 700;
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+
+	&:hover {
+		box-shadow: 0 2px 4px $color-1-darker;
+	}
+}
