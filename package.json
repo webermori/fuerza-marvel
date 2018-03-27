@@ -46,7 +46,7 @@
     "webpack-livereload-plugin": "^2.1.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "lite-server --baseDir=app"
   },
   "author": "Weber Mori <webermori@gmail.com>",
   "license": "ISC"

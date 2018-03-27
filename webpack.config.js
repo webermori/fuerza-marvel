@@ -20,6 +20,16 @@ module.exports = {
     },
     plugins: [
         new LiveReloadPlugin(),
+        new UglifyJsPlugin({
+            exclude: /\/(node_modules|bower_components)/,
+            sourceMap: true,
+            uglifyOptions: {
+                warnings: false,
+                output: {
+                    comments: false,
+                }
+            }
+        }),
         new webpack.ProvidePlugin({
           $: 'jquery',
           jQuery: 'jquery'

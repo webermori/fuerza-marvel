@@ -32,5 +32,5 @@ gulp.task('build-favicon', function () {
         }
     }))
     .on('error', gutil.log)
-    .pipe(gulp.dest('./images/favicon'));
+    .pipe(gulp.dest(config.dest + '/favicon'));
 });
